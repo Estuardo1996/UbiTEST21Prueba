@@ -17,7 +17,7 @@ namespace UbiTEST21.Controllers
         // GET: Platoes
         public ActionResult Index()
         {
-            return View(db.Plato.ToList());
+            return View(db.Plato.Where(x => x.Precio > 8 && x.Precio < 26 && x.FechaCreacion >= DateTime.Today ).ToList());
         }
 
         // GET: Platoes/Details/5
