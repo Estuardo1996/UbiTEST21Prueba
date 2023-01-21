@@ -11,10 +11,12 @@ namespace UbiTEST21.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Plato
     {
         public int ID { get; set; }
+        [StringLength(50, MinimumLength = 5)]
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public Nullable<decimal> Precio { get; set; }
