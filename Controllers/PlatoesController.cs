@@ -50,9 +50,13 @@ namespace UbiTEST21.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Plato.Add(plato);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (plato.Nombre.Length > 4 )
+                {
+                    db.Plato.Add(plato);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+             
             }
 
             return View(plato);
